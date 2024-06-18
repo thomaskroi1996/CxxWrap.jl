@@ -390,7 +390,7 @@ function has_cxx_module(mod::Module)
 end
 
 function register_julia_module(mod::Module, fptr::Ptr{Cvoid})
-  ccall((:register_julia_module,libcxxwrap_julia), Cvoid, (Any,Ptr{Cvoid}), mod, fptr)
+  ccall((:register_julia_module,libcxxwrap_julia), Cvoid, (Module,Ptr{Cvoid}), mod, fptr)
 end
 
 function initialize_julia_module(mod::Module)
