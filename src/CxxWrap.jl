@@ -744,6 +744,9 @@ function readmodule(so_path::AbstractString, funcname, m::Module, flags)
 end
 
 function wrapmodule(so_path::AbstractString, funcname, m::Module, flags)
+  println(so_path)
+  println(m)
+  println(funcname)
   readmodule(so_path, funcname, m, flags)
   wraptypes(m)
   wrapfunctions(m)
